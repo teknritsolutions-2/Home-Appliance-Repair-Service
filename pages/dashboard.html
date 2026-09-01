@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Dashboard | Fixora</title>
+  <meta name="description" content="Track your active appliance repair, technician assignment, appointment window, service timeline, repair history and invoices.">
+  <meta property="og:title" content="Customer Dashboard | Fixora">
+  <meta property="og:description" content="Track your active appliance repair, technician assignment, appointment window, service timeline, repair history and invoices.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/home1-hero-technician.jpg">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('fixora-theme') || 'light';
+    document.documentElement.dir = localStorage.getItem('fixora-dir') || 'ltr';
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fixora Appliance Repair",
+    "telephone": "+1-800-555-0147",
+    "priceRange": "$$",
+    "areaServed": "Metro Area",
+    "image": "../assets/images/home1-hero-technician.jpg",
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Home Appliance Repair"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dashboard-page" data-page="dashboard" data-title="Overview">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="dashboard-shell">
+    <aside class="dash-sidebar" data-dash-sidebar></aside>
+    <div class="dash-content">
+      <header class="dash-topbar" data-dash-topbar></header>
+      <main class="dash-main" id="main">
+        <div class="dash-grid">
+          <!-- Active Repair Hero Card -->
+          <article class="dash-card span-8" data-loading>
+            <div class="dash-card-head">
+              <div>
+                <span class="eyebrow">Active Repair</span>
+                <h2>Samsung Refrigerator</h2>
+              </div>
+              <span class="status">Technician Assigned</span>
+            </div>
+            <div class="repair-hero">
+              <div>
+                <p><strong>Issue:</strong> Not cooling · intermittent fan noise</p>
+                <div class="repair-meta">
+                  <div><span>Appointment</span><strong>Aug 29 · 10am–1pm</strong></div>
+                  <div><span>Estimated arrival</span><strong>11:20–11:40am</strong></div>
+                  <div><span>Reference</span><strong>FX-20481</strong></div>
+                </div>
+              </div>
+              <div class="technician">
+                <span class="avatar">JL</span>
+                <strong>Jordan Lee</strong>
+                <p class="muted">Refrigeration specialist<br>Profile verified</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Next Window Dark Stat Card -->
+          <article class="dash-card stat-card span-4">
+            <div class="stat-content">
+              <span class="muted">Next window</span>
+              <strong>Tomorrow</strong>
+              <p>10:00am–1:00pm</p>
+            </div>
+            <a class="btn btn-primary" href="dashboard-request-repair.html">Request Another Repair</a>
+          </article>
+
+          <!-- Service Timeline (Full Width for Maximum Clarity) -->
+          <article class="dash-card span-12">
+            <div class="dash-card-head">
+              <h2>Service timeline</h2>
+              <a class="text-link" href="dashboard-active-repairs.html">View details</a>
+            </div>
+            <div class="timeline" style="margin-top:16px;">
+              <div class="timeline-item done">
+                <span class="timeline-dot">✓</span>
+                <div>
+                  <strong>Request Submitted</strong>
+                  <p>Aug 28 · 8:42am</p>
+                </div>
+              </div>
+              <div class="timeline-item done">
+                <span class="timeline-dot">✓</span>
+                <div>
+                  <strong>Booking Confirmed</strong>
+                  <p>Aug 28 · 8:47am</p>
+                </div>
+              </div>
+              <div class="timeline-item active">
+                <span class="timeline-dot">3</span>
+                <div>
+                  <strong>Technician Assigned</strong>
+                  <p>Jordan Lee · en route alerts</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">4</span>
+                <div>
+                  <strong>Technician En Route</strong>
+                  <p>Pending dispatch</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">5</span>
+                <div>
+                  <strong>Repair In Progress</strong>
+                  <p>Diagnostics &amp; fix</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">6</span>
+                <div>
+                  <strong>Repair Completed</strong>
+                  <p>Warranty logged</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recent History -->
+          <article class="dash-card span-6">
+            <div class="dash-card-head">
+              <h2>Recent history</h2>
+              <a class="text-link" href="dashboard-history.html">All repairs</a>
+            </div>
+            <p style="margin-bottom:14px;"><strong>Whirlpool Washer</strong><br><span class="muted">Drain pump replaced · Jun 14</span></p>
+            <p style="margin-bottom:14px;"><strong>Bosch Dishwasher</strong><br><span class="muted">Inlet valve replaced · Feb 03</span></p>
+            <hr style="border:0;border-top:1px solid var(--border);margin-block:16px;">
+            <a class="text-link" href="dashboard-history.html">View full repair history →</a>
+          </article>
+
+          <!-- Invoices &amp; Billing Summary -->
+          <article class="dash-card span-6">
+            <div class="dash-card-head">
+              <h2>Recent Invoices</h2>
+              <a class="text-link" href="dashboard-invoices.html">All invoices</a>
+            </div>
+            <p><span class="muted">Latest Invoice</span><br><strong style="font-size:1.15rem;color:var(--text-heading);">INV-10426 · $286.42</strong></p>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-top:4px;">Whirlpool Washer · Drain assembly &amp; labor · Paid in full</p>
+            <hr style="border:0;border-top:1px solid var(--border);margin-block:16px;">
+            <a class="text-link" href="dashboard-invoices.html">Download PDF Invoice →</a>
+          </article>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

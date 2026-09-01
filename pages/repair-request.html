@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Appliance Repair — Fixora Booking Wizard</title>
+  <meta name="description" content="Schedule an in-home appliance diagnostic visit in under two minutes. Select your appliance, describe symptoms, and pick your arrival window.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-page="repair-request">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div data-site-header></div>
+
+  <main id="main">
+    <!-- 01. IMAGE-LED PAGE BANNER -->
+    <section class="page-banner">
+      <div class="page-banner-media">
+        <img src="../assets/images/repair-request-banner.jpg" width="1600" height="1067" alt="Request In-Home Appliance Repair Service">
+      </div>
+      <div class="page-banner-overlay"></div>
+      <div class="container page-banner-content">
+        <div class="page-banner-inner">
+          <ol class="page-banner-breadcrumbs">
+            <li><a href="index.html">Home</a></li>
+            <li>Request Repair</li>
+          </ol>
+          <span class="page-banner-eyebrow">Online Booking</span>
+          <h1>Request an appliance repair visit.</h1>
+          <p>Provide a few details regarding your appliance, observed failure symptoms, and preferred appointment window to schedule a certified specialist.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. MULTI-STEP BOOKING WIZARD -->
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+        <div class="form-card reveal">
+          <!-- Wizard Step Indicator -->
+          <div class="wizard-steps">
+            <div class="wizard-step-tab active">
+              <span>1</span> Appliance
+            </div>
+            <div class="wizard-step-tab">
+              <span>2</span> Symptoms
+            </div>
+            <div class="wizard-step-tab">
+              <span>3</span> Address
+            </div>
+            <div class="wizard-step-tab">
+              <span>4</span> Schedule
+            </div>
+            <div class="wizard-step-tab">
+              <span>5</span> Confirm
+            </div>
+          </div>
+
+          <form data-request-form data-validate novalidate>
+            <!-- STEP 1: APPLIANCE SELECTION -->
+            <div class="request-step" style="display:block;">
+              <h3 style="margin-bottom:6px;">Select your appliance type:</h3>
+              <p class="muted" style="margin-bottom:20px;">Choose the equipment that requires diagnostic inspection.</p>
+              
+              <div class="choice-grid">
+                <label class="choice-card selected">
+                  <input type="radio" name="appliance" value="Refrigerator" checked style="display:none;">
+                  <strong>Refrigerator</strong>
+                  <span>French Door, Side-by-Side, Freezer</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="appliance" value="Washer" style="display:none;">
+                  <strong>Washing Machine</strong>
+                  <span>Front Load, Top Load</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="appliance" value="Dryer" style="display:none;">
+                  <strong>Clothes Dryer</strong>
+                  <span>Electric, Gas, Heat Pump</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="appliance" value="Dishwasher" style="display:none;">
+                  <strong>Dishwasher</strong>
+                  <span>Built-in, Panel-Ready</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="appliance" value="Oven" style="display:none;">
+                  <strong>Oven &amp; Range</strong>
+                  <span>Gas, Electric, Induction</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="appliance" value="Microwave" style="display:none;">
+                  <strong>Microwave</strong>
+                  <span>Built-in, Over-the-Range</span>
+                </label>
+              </div>
+
+              <div style="display:flex;justify-content:flex-end;margin-top:28px;">
+                <button class="btn btn-primary" type="button" data-next>Continue to Symptoms →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2: SYMPTOMS -->
+            <div class="request-step" style="display:none;">
+              <h3 style="margin-bottom:6px;">What issue are you noticing?</h3>
+              <p class="muted" style="margin-bottom:20px;">Select the primary symptom and add optional brand/model notes.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="applianceBrand">Brand / Manufacturer *</label>
+                <input class="form-input" id="applianceBrand" type="text" required placeholder="e.g. Samsung, Whirlpool, Bosch, LG">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="primarySymptom">Primary Failure Mode *</label>
+                <select class="form-select" id="primarySymptom" required>
+                  <option value="no-cooling">Not Cooling / Not Heating</option>
+                  <option value="leaking">Water Leakage / Drainage Error</option>
+                  <option value="noise">Unusual Loud Noise or Vibration</option>
+                  <option value="power">No Power / Tripped Breaker</option>
+                  <option value="error-code">Displaying Error Code</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="symptomNotes">Describe the problem</label>
+                <textarea class="form-textarea" id="symptomNotes" placeholder="Provide any details such as error code numbers or when the issue first started."></textarea>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-top:28px;">
+                <button class="btn btn-secondary" type="button" data-back>← Back</button>
+                <button class="btn btn-primary" type="button" data-next>Continue to Address →</button>
+              </div>
+            </div>
+
+            <!-- STEP 3: ADDRESS -->
+            <div class="request-step" style="display:none;">
+              <h3 style="margin-bottom:6px;">Where should the technician arrive?</h3>
+              <p class="muted" style="margin-bottom:20px;">Provide your service address and contact details.</p>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="custName">Your Name *</label>
+                  <input class="form-input" id="custName" type="text" required placeholder="Sarah Jenkins">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="custPhone">Phone Number *</label>
+                  <input class="form-input" id="custPhone" type="tel" required placeholder="(555) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="custAddress">Street Address *</label>
+                <input class="form-input" id="custAddress" type="text" required placeholder="123 Oakridge Lane, Apt 4B">
+              </div>
+
+              <div class="form-row-2-uneven">
+                <div class="form-group">
+                  <label class="form-label" for="custCity">City *</label>
+                  <input class="form-input" id="custCity" type="text" required placeholder="Metro City">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="custZip">ZIP Code *</label>
+                  <input class="form-input" id="custZip" type="text" required placeholder="90210">
+                </div>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-top:28px;">
+                <button class="btn btn-secondary" type="button" data-back>← Back</button>
+                <button class="btn btn-primary" type="button" data-next>Continue to Schedule →</button>
+              </div>
+            </div>
+
+            <!-- STEP 4: SCHEDULE -->
+            <div class="request-step" style="display:none;">
+              <h3 style="margin-bottom:6px;">Choose your arrival window:</h3>
+              <p class="muted" style="margin-bottom:20px;">Select your preferred date and convenient arrival slot.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="apptDate">Preferred Service Date *</label>
+                <input class="form-input" id="apptDate" type="date" required>
+              </div>
+
+              <div class="choice-grid choice-grid-2">
+                <label class="choice-card selected">
+                  <input type="radio" name="window" value="Morning" checked style="display:none;">
+                  <strong>Morning Window</strong>
+                  <span>8:00 AM – 12:00 PM</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="window" value="Afternoon" style="display:none;">
+                  <strong>Afternoon Window</strong>
+                  <span>12:00 PM – 4:00 PM</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="window" value="Late-Afternoon" style="display:none;">
+                  <strong>Late Afternoon</strong>
+                  <span>4:00 PM – 7:00 PM</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="window" value="Priority" style="display:none;">
+                  <strong>Priority Urgent Window</strong>
+                  <span>Next Available Specialist</span>
+                </label>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-top:28px;">
+                <button class="btn btn-secondary" type="button" data-back>← Back</button>
+                <button class="btn btn-primary" type="button" data-next>Submit Repair Request →</button>
+              </div>
+            </div>
+
+            <!-- STEP 5: CONFIRMATION -->
+            <div class="request-step" style="display:none;">
+              <div style="text-align:center;padding:20px 0;">
+                <span class="check-icon" style="width:48px;height:48px;font-size:1.4rem;margin:0 auto 16px;">✓</span>
+                <h2 style="font-size:1.8rem;margin-bottom:8px;">Repair Request Confirmed!</h2>
+                <p class="kicker" style="margin:0 auto 20px;">Your dispatch reference is <strong>#FX-20489</strong>. A specialist has been assigned to your arrival window.</p>
+                <div style="background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;max-width:480px;margin:0 auto 24px;text-align:left;">
+                  <strong style="display:block;margin-bottom:4px;color:var(--text-heading);">Next Steps:</strong>
+                  <ul style="font-size:0.88rem;color:var(--text-muted);display:flex;flex-direction:column;gap:6px;">
+                    <li>• You will receive SMS arrival notifications when Jordan is en route.</li>
+                    <li>• Diagnostic multimeters and OEM parts are prepped for inspection.</li>
+                    <li>• Track live updates in your customer dashboard anytime.</li>
+                  </ul>
+                </div>
+                <div class="button-group" style="justify-content:center;">
+                  <a class="btn btn-primary" href="dashboard.html">View in Customer Portal</a>
+                  <a class="btn btn-secondary" href="index.html">Return Home</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

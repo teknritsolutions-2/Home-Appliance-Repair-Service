@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile &amp; Settings | Fixora Portal</title>
+  <meta name="description" content="Manage your Fixora customer profile, contact details, service address, communication preferences, theme and text direction.">
+  <meta property="og:title" content="Profile &amp; Settings | Fixora Portal">
+  <meta property="og:description" content="Manage your Fixora customer profile, contact details, service address, communication preferences, theme and text direction.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/home1-hero-technician.jpg">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('fixora-theme') || 'light';
+    document.documentElement.dir = localStorage.getItem('fixora-dir') || 'ltr';
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fixora Appliance Repair",
+    "telephone": "+1-800-555-0147",
+    "priceRange": "$$",
+    "areaServed": "Metro Area",
+    "image": "../assets/images/home1-hero-technician.jpg",
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Home Appliance Repair"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dashboard-page" data-page="dashboard-profile" data-title="Profile &amp; Settings">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="dashboard-shell">
+    <aside class="dash-sidebar" data-dash-sidebar></aside>
+    <div class="dash-content">
+      <header class="dash-topbar" data-dash-topbar></header>
+      <main class="dash-main" id="main">
+        <div class="dash-grid">
+          <!-- Personal Details Form -->
+          <article class="dash-card span-8">
+            <span class="eyebrow">Personal Details</span>
+            <h2>Contact and service information</h2>
+            <form data-validate novalidate style="margin-top:20px;">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="profile-first">First name</label>
+                  <input class="form-input" id="profile-first" value="Alex" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="profile-last">Last name</label>
+                  <input class="form-input" id="profile-last" value="Morgan" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="profile-email">Email</label>
+                  <input class="form-input" id="profile-email" type="email" value="alex.morgan@example.com" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="profile-phone">Phone</label>
+                  <input class="form-input" id="profile-phone" type="tel" value="(555) 014-2286" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field full">
+                  <label for="profile-address">Service address</label>
+                  <input class="form-input" id="profile-address" value="42 Juniper Lane, Central Metro, 10018" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field full" style="margin-top:8px;">
+                  <button class="btn btn-primary" type="submit">Save Changes</button>
+                </div>
+              </div>
+            </form>
+            <div class="confirmation" hidden style="margin-top:20px;">
+              <div class="confirmation-icon" style="color:var(--accent);font-size:1.5rem;">✓</div>
+              <h3>Profile updated successfully.</h3>
+            </div>
+          </article>
+
+          <!-- Communication &amp; Account Security -->
+          <aside class="dash-card span-4">
+            <h2>Communication</h2>
+            <div style="display:flex;flex-direction:column;gap:14px;margin-top:16px;">
+              <label style="display:flex;align-items:center;gap:10px;font-size:0.92rem;color:var(--text-body);cursor:pointer;">
+                <input type="checkbox" checked style="width:18px;height:18px;">
+                <span>Appointment text updates</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:0.92rem;color:var(--text-body);cursor:pointer;">
+                <input type="checkbox" checked style="width:18px;height:18px;">
+                <span>Technician arrival alerts</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:10px;font-size:0.92rem;color:var(--text-body);cursor:pointer;">
+                <input type="checkbox" style="width:18px;height:18px;">
+                <span>Maintenance reminders</span>
+              </label>
+            </div>
+            <hr style="border:0;border-top:1px solid var(--border);margin-block:24px;">
+            <h3>Account security</h3>
+            <button type="button" class="btn btn-secondary" onclick="this.textContent='Reset link sent'; this.disabled=true;">Change Password</button>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

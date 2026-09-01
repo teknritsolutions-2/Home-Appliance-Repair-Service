@@ -1,0 +1,274 @@
+/* ==========================================================================
+   FIXORA — MONOCHROME DARK MODE PALETTE
+   High-Contrast Architectural Neutral System (#101110 / #181A18 / #202220)
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --bg: #101110;
+  --surface: #181A18;
+  --surface-alt: #202220;
+  --surface-card: #181A18;
+  --header: #101110;
+  
+  --text-heading: #FFFFFF;
+  --text-body: #D7D9D7;
+  --text-muted: #A4A8A4;
+  
+  --border: #343734;
+  --border-light: #252825;
+  
+  --accent: #C47A60;
+  --accent-hover: #D28B71;
+  --accent-soft: #2A1E1A;
+  --on-accent: #FFFFFF;
+  --on-dark: #FFFFFF;
+  
+  --primary: #C47A60;
+  --primary-dark: #D28B71;
+  --primary-light: #D28B71;
+  --primary-soft: #2A1E1A;
+  --primary-tint: #1C1715;
+  
+  --dark-bg: #0A0B0A;
+  --dark-surface: #101110;
+  --dark-border: #252825;
+  --dark-text: #FFFFFF;
+  --dark-muted: #A4A8A4;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .site-header {
+  background: var(--bg);
+  border-bottom-color: transparent;
+}
+
+[data-theme="dark"] .site-header.header-scrolled {
+  background: var(--surface);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .site-brand {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .site-brand svg {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .nav-dropdown-trigger {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .nav-dropdown-menu {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .nav-dropdown-item {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .nav-dropdown-item:hover,
+[data-theme="dark"] .nav-dropdown-item.active {
+  background: var(--surface-alt);
+}
+
+[data-theme="dark"] .nav-toggle-btn {
+  background: var(--surface);
+  color: #FFFFFF;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .nav-toggle-btn:hover {
+  background: var(--surface-alt);
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: #FFFFFF;
+  color: #111111 !important;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: #121412;
+  border-color: var(--border);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+  background: #1A1C1A;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .choice-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .choice-card:hover {
+  background: var(--surface-alt);
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .choice-card.selected {
+  background: var(--surface-alt);
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .receipt-card,
+[data-theme="dark"] .portal-widget,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .guide-card,
+[data-theme="dark"] .faq-support-box,
+[data-theme="dark"] .accordion-item {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .receipt-head {
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] .receipt-guarantee {
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] .author-avatar {
+  background: var(--surface-alt);
+  color: #FFFFFF;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .check-icon {
+  background: var(--surface-alt);
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .hero-floating-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .home-hero-frame img {
+  filter: brightness(0.82) contrast(1.05);
+}
+
+[data-theme="dark"] .home-hero-overlay {
+  background:
+    linear-gradient(115deg, rgba(7, 9, 7, 0.97) 0%, rgba(7, 9, 7, 0.87) 48%, rgba(7, 9, 7, 0.58) 100%),
+    linear-gradient(0deg, rgba(7, 9, 7, 0.32), rgba(7, 9, 7, 0.32));
+}
+
+[data-theme="dark"][dir="rtl"] .home-hero-overlay {
+  background:
+    linear-gradient(245deg, rgba(7, 9, 7, 0.97) 0%, rgba(7, 9, 7, 0.87) 48%, rgba(7, 9, 7, 0.58) 100%),
+    linear-gradient(0deg, rgba(7, 9, 7, 0.32), rgba(7, 9, 7, 0.32));
+}
+
+[data-theme="dark"] .banner-badge {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .scroll-top-btn {
+  background: var(--surface);
+  color: #FFFFFF;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .scroll-top-btn:hover {
+  background: #FFFFFF;
+  color: #111111;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .slider-btn {
+  background: var(--surface);
+  color: #FFFFFF;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .slider-btn:hover {
+  background: #FFFFFF;
+  color: #111111;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .hamburger-btn,
+[data-theme="dark"] .drawer-close-btn {
+  background: var(--surface);
+  color: #FFFFFF;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .hamburger-btn:hover,
+[data-theme="dark"] .drawer-close-btn:hover {
+  background: var(--surface-alt);
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-drawer {
+  background: var(--bg);
+  border-inline-start-color: var(--border);
+}
+
+[data-theme="dark"] .mobile-drawer-link {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-drawer-link:hover,
+[data-theme="dark"] .mobile-drawer-link.active {
+  background: var(--surface-alt);
+  color: var(--accent);
+}
+
+[data-theme="dark"] .drawer-segmented button {
+  background: var(--surface);
+  color: var(--text-body);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .drawer-segmented button.active {
+  background: #FFFFFF;
+  color: #111111;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .home2-hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 11, 10, 0.96) 0%,
+    rgba(10, 11, 10, 0.88) 55%,
+    rgba(10, 11, 10, 0.68) 100%
+  );
+}
+
+[data-theme="dark"][dir="rtl"] .home2-hero-overlay {
+  background: linear-gradient(
+    225deg,
+    rgba(10, 11, 10, 0.96) 0%,
+    rgba(10, 11, 10, 0.88) 55%,
+    rgba(10, 11, 10, 0.68) 100%
+  );
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Active Repairs | Fixora Portal</title>
+  <meta name="description" content="View active appliance repair status, technician assignment, appointment timing, arrival tracking and current job notes.">
+  <meta property="og:title" content="Active Repairs | Fixora Portal">
+  <meta property="og:description" content="View active appliance repair status, technician assignment, appointment timing, arrival tracking and current job notes.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/home1-hero-technician.jpg">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('fixora-theme') || 'light';
+    document.documentElement.dir = localStorage.getItem('fixora-dir') || 'ltr';
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fixora Appliance Repair",
+    "telephone": "+1-800-555-0147",
+    "priceRange": "$$",
+    "areaServed": "Metro Area",
+    "image": "../assets/images/home1-hero-technician.jpg",
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Home Appliance Repair"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dashboard-page" data-page="dashboard-active" data-title="Active Repairs">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="dashboard-shell">
+    <aside class="dash-sidebar" data-dash-sidebar></aside>
+    <div class="dash-content">
+      <header class="dash-topbar" data-dash-topbar></header>
+      <main class="dash-main" id="main">
+        <div class="dash-grid">
+          <!-- Active Repair Hero Card -->
+          <article class="dash-card span-8">
+            <div class="dash-card-head">
+              <div>
+                <span class="eyebrow">Active Repair</span>
+                <h2>Samsung Refrigerator</h2>
+              </div>
+              <span class="status">Technician Assigned</span>
+            </div>
+            <div class="repair-hero">
+              <div>
+                <p><strong>Issue:</strong> Not cooling · intermittent fan noise</p>
+                <div class="repair-meta">
+                  <div><span>Appointment</span><strong>Aug 29 · 10am–1pm</strong></div>
+                  <div><span>Estimated arrival</span><strong>11:20–11:40am</strong></div>
+                  <div><span>Reference</span><strong>FX-20481</strong></div>
+                </div>
+              </div>
+              <div class="technician">
+                <span class="avatar">JL</span>
+                <strong>Jordan Lee</strong>
+                <p class="muted">Refrigeration specialist<br>Profile verified</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Appointment Details -->
+          <article class="dash-card span-4">
+            <h2>Appointment Details</h2>
+            <div class="contact-list" style="display:flex;flex-direction:column;gap:12px;margin-top:14px;">
+              <div>
+                <span class="muted" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;">Service location</span>
+                <p style="margin:2px 0 0;font-weight:600;color:var(--text-heading);">42 Juniper Lane, Central Metro</p>
+              </div>
+              <div>
+                <span class="muted" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;">Contact</span>
+                <p style="margin:2px 0 0;font-weight:600;color:var(--text-heading);">Alex Morgan · (555) 014-2286</p>
+              </div>
+              <div>
+                <span class="muted" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;">Access note</span>
+                <p style="margin:2px 0 0;font-weight:600;color:var(--text-heading);">Call from lobby</p>
+              </div>
+            </div>
+            <button class="btn btn-secondary" type="button" style="margin-top:16px;width:100%;" onclick="document.getElementById('support-note').hidden=false">Contact Support</button>
+            <p id="support-note" class="notice" hidden style="margin-top:12px;font-size:0.85rem;color:var(--text-muted);">Call (800) 555-0147 and mention reference FX-20481.</p>
+          </article>
+
+          <!-- Service Timeline Full Width -->
+          <article class="dash-card span-12">
+            <div class="dash-card-head">
+              <h2>Service timeline</h2>
+              <span class="status">Step 3 of 6</span>
+            </div>
+            <div class="timeline" style="margin-top:16px;">
+              <div class="timeline-item done">
+                <span class="timeline-dot">✓</span>
+                <div>
+                  <strong>Request Submitted</strong>
+                  <p>Aug 28 · 8:42am</p>
+                </div>
+              </div>
+              <div class="timeline-item done">
+                <span class="timeline-dot">✓</span>
+                <div>
+                  <strong>Booking Confirmed</strong>
+                  <p>Aug 28 · 8:47am</p>
+                </div>
+              </div>
+              <div class="timeline-item active">
+                <span class="timeline-dot">3</span>
+                <div>
+                  <strong>Technician Assigned</strong>
+                  <p>Jordan Lee · arrival alerts active</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">4</span>
+                <div>
+                  <strong>Technician En Route</strong>
+                  <p>Pending live dispatch</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">5</span>
+                <div>
+                  <strong>Repair In Progress</strong>
+                  <p>Diagnostics &amp; part install</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot">6</span>
+                <div>
+                  <strong>Repair Completed</strong>
+                  <p>Post-service check &amp; warranty</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Repair | Fixora Portal</title>
+  <meta name="description" content="Request another appliance repair from your Fixora customer portal with saved contact and service-location information.">
+  <meta property="og:title" content="Request Repair | Fixora Portal">
+  <meta property="og:description" content="Request another appliance repair from your Fixora customer portal with saved contact and service-location information.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/home1-hero-technician.jpg">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('fixora-theme') || 'light';
+    document.documentElement.dir = localStorage.getItem('fixora-dir') || 'ltr';
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fixora Appliance Repair",
+    "telephone": "+1-800-555-0147",
+    "priceRange": "$$",
+    "areaServed": "Metro Area",
+    "image": "../assets/images/home1-hero-technician.jpg",
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Home Appliance Repair"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dashboard-page" data-page="dashboard-request" data-title="Request Repair">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="dashboard-shell">
+    <aside class="dash-sidebar" data-dash-sidebar></aside>
+    <div class="dash-content">
+      <header class="dash-topbar" data-dash-topbar></header>
+      <main class="dash-main" id="main">
+        <div class="dash-grid">
+          <!-- Request Repair Form -->
+          <article class="dash-card span-8">
+            <span class="eyebrow">New Service Request</span>
+            <h2>What needs attention?</h2>
+            <form data-validate novalidate style="margin-top:20px;">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="dash-appliance">Appliance Type</label>
+                  <select class="form-input" id="dash-appliance" required>
+                    <option value="">Choose an appliance</option>
+                    <option>Refrigerator / Freezer</option>
+                    <option>Washing Machine</option>
+                    <option>Clothes Dryer</option>
+                    <option>Dishwasher</option>
+                    <option>Oven / Cooktop / Range</option>
+                    <option>Microwave</option>
+                  </select>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="dash-brand">Manufacturer / Brand</label>
+                  <input class="form-input" id="dash-brand" placeholder="e.g. Samsung, Bosch, Whirlpool" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field full">
+                  <label for="dash-fault">Describe the symptom or error</label>
+                  <textarea class="form-input" id="dash-fault" placeholder="e.g. Not cooling, leaking from bottom, making grinding sound" required style="min-height:90px;"></textarea>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="dash-date">Preferred Date</label>
+                  <input class="form-input" id="dash-date" type="date" required>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field">
+                  <label for="dash-window">Preferred Window</label>
+                  <select class="form-input" id="dash-window" required>
+                    <option value="">Choose window</option>
+                    <option>Morning (8:00am – 11:00am)</option>
+                    <option>Midday (11:00am – 2:00pm)</option>
+                    <option>Afternoon (2:00pm – 5:00pm)</option>
+                  </select>
+                  <span class="field-error"></span>
+                </div>
+                <div class="field full" style="margin-top:8px;">
+                  <button class="btn btn-primary" type="submit">Submit Service Request</button>
+                </div>
+              </div>
+            </form>
+            <div class="confirmation" hidden style="margin-top:20px;">
+              <div class="confirmation-icon" style="color:var(--accent);font-size:1.5rem;">✓</div>
+              <h3>Request submitted successfully.</h3>
+              <p style="color:var(--text-muted);font-size:0.9rem;">Customer care will assign a technician and confirm your window shortly.</p>
+            </div>
+          </article>
+
+          <!-- Service Location Summary -->
+          <aside class="dash-card span-4">
+            <h2>Saved Location</h2>
+            <p style="font-size:0.95rem;font-weight:600;color:var(--text-heading);margin-top:12px;">42 Juniper Lane<br>Central Metro, 10018</p>
+            <a class="text-link" href="dashboard-profile.html" style="margin-top:6px;display:inline-block;">Edit service address →</a>
+            <hr style="border:0;border-top:1px solid var(--border);margin-block:22px;">
+            <h3>Before Submitting</h3>
+            <ul style="padding-left:18px;margin-top:10px;font-size:0.88rem;color:var(--text-muted);display:flex;flex-direction:column;gap:8px;">
+              <li>Note any error codes flashing on your appliance display</li>
+              <li>Keep the model number label accessible</li>
+              <li>Leave the unit assembled for multimeter diagnosis</li>
+            </ul>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

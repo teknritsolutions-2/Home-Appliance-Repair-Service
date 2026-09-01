@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoices | Fixora Portal</title>
+  <meta name="description" content="Access itemized appliance repair invoices showing diagnostic fees, labor, replacement parts, tax, totals and payment status.">
+  <meta property="og:title" content="Invoices | Fixora Portal">
+  <meta property="og:description" content="Access itemized appliance repair invoices showing diagnostic fees, labor, replacement parts, tax, totals and payment status.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/home1-hero-technician.jpg">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/fixora-mark.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('fixora-theme') || 'light';
+    document.documentElement.dir = localStorage.getItem('fixora-dir') || 'ltr';
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fixora Appliance Repair",
+    "telephone": "+1-800-555-0147",
+    "priceRange": "$$",
+    "areaServed": "Metro Area",
+    "image": "../assets/images/home1-hero-technician.jpg",
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Home Appliance Repair"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dashboard-page" data-page="dashboard-invoices" data-title="Invoices">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="dashboard-shell">
+    <aside class="dash-sidebar" data-dash-sidebar></aside>
+    <div class="dash-content">
+      <header class="dash-topbar" data-dash-topbar></header>
+      <main class="dash-main" id="main">
+        <div class="dash-grid">
+          <!-- Invoices List -->
+          <article class="dash-card span-4">
+            <h2>Invoice List</h2>
+            <div class="contact-list" style="display:flex;flex-direction:column;gap:14px;margin-top:16px;">
+              <div style="padding:12px;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--radius-sm);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span class="status">Paid</span>
+                  <strong style="color:var(--text-heading);">$286.42</strong>
+                </div>
+                <p style="margin:0;font-weight:700;color:var(--text-heading);">INV-10426</p>
+                <p style="margin:2px 0 0;font-size:0.85rem;color:var(--text-muted);">Whirlpool Washer · Jun 14, 2026</p>
+              </div>
+
+              <div style="padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span class="status">Paid</span>
+                  <strong style="color:var(--text-heading);">$241.85</strong>
+                </div>
+                <p style="margin:0;font-weight:700;color:var(--text-heading);">INV-09818</p>
+                <p style="margin:2px 0 0;font-size:0.85rem;color:var(--text-muted);">Bosch Dishwasher · Feb 03, 2026</p>
+              </div>
+
+              <div style="padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <span class="status">Paid</span>
+                  <strong style="color:var(--text-heading);">$318.74</strong>
+                </div>
+                <p style="margin:0;font-weight:700;color:var(--text-heading);">INV-08207</p>
+                <p style="margin:2px 0 0;font-size:0.85rem;color:var(--text-muted);">GE Dryer · Sep 21, 2025</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Itemized Invoice Display -->
+          <article class="span-8">
+            <div class="invoice-paper">
+              <div class="invoice-top">
+                <div>
+                  <span class="eyebrow">Fixora Service</span>
+                  <h2>Itemized Invoice</h2>
+                  <p style="font-size:0.9rem;color:var(--text-muted);margin-top:4px;">INV-10426 · June 14, 2026</p>
+                </div>
+                <div style="text-align:right;">
+                  <strong>Billed To</strong>
+                  <p style="font-size:0.9rem;color:var(--text-muted);margin-top:4px;">Alex Morgan<br>42 Juniper Lane<br>Central Metro, 10018</p>
+                </div>
+              </div>
+              <div style="padding-block:24px;">
+                <p><strong>Service Equipment:</strong> Whirlpool Washer (Model WFW5605MW) · Issue: Drain Failure</p>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Item &amp; Description</th>
+                        <th>Qty</th>
+                        <th style="text-align:right;">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Diagnostic In-Home Inspection</td>
+                        <td>1</td>
+                        <td style="text-align:right;">$89.00</td>
+                      </tr>
+                      <tr>
+                        <td>Drain Pump Replacement Labor</td>
+                        <td>1</td>
+                        <td style="text-align:right;">$115.00</td>
+                      </tr>
+                      <tr>
+                        <td>OEM Whirlpool Drain Pump Assembly</td>
+                        <td>1</td>
+                        <td style="text-align:right;">$63.00</td>
+                      </tr>
+                      <tr>
+                        <td>Applicable State &amp; Local Tax</td>
+                        <td>—</td>
+                        <td style="text-align:right;">$19.42</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="invoice-total">
+                  <span>Total Paid</span>
+                  <span>$286.42</span>
+                </div>
+              </div>
+              <p style="font-size:0.88rem;color:var(--text-muted);"><strong>Technician Note:</strong> Installed replacement OEM drain pump assembly, cleared lint from drain hose, and verified two consecutive rinse/spin drain cycles. Backed by standard service and parts coverage.</p>
+              <div class="button-row" style="display:flex;gap:12px;margin-top:20px;">
+                <button class="btn btn-primary" type="button" onclick="window.print()">Print Invoice</button>
+                <button class="btn btn-secondary" type="button" onclick="window.print()">Download PDF</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>
