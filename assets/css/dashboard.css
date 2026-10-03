@@ -377,6 +377,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  align-items: start;
 }
 
 .span-12, .span-8, .span-7, .span-6, .span-5, .span-4, .span-3 {
@@ -396,7 +397,7 @@
   overflow-wrap: anywhere;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .dash-grid > .dash-card.active-repair-hero {
@@ -669,6 +670,68 @@
 }
 
 /* Invoices & Ratings */
+.invoice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.invoice-list-item {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-body);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.invoice-list-item:hover,
+.invoice-list-item.is-active {
+  border-color: var(--text-heading);
+  background: var(--surface-alt);
+}
+
+.invoice-list-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.invoice-list-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.invoice-list-item > span {
+  display: block;
+}
+
+.invoice-list-item .invoice-number {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+.invoice-list-item .invoice-summary {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.invoice-bill-to {
+  text-align: end;
+}
+
+.invoice-amount {
+  text-align: end;
+}
+
 .invoice-paper {
   max-width: 760px;
   width: 100%;
@@ -916,7 +979,7 @@
   .dash-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 24px;
-    align-items: stretch;
+    align-items: start;
   }
 
   .span-12 { grid-column: span 12; }

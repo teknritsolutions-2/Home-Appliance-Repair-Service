@@ -49,9 +49,6 @@
         <button type="button" data-dir="ltr">LTR</button>
         <button type="button" data-dir="rtl">RTL</button>
       </div>
-    </div>
-    <div style="margin-top:14px;">
-      <a class="btn btn-secondary" href="login.html" style="width:100%;font-size:0.85rem;justify-content:center;">Logout</a>
     </div>`;
 
   // 1. Mount Desktop Sidebar
@@ -211,6 +208,84 @@
       input.min = date.toISOString().slice(0, 10);
     }
   });
+
+  // Invoice selection stays entirely client-side in this static demo.
+  const invoiceData = {
+    'INV-10426': {
+      date: 'June 14, 2026',
+      equipment: 'Whirlpool Washer (Model WFW5605MW) · Issue: Drain Failure',
+      total: '$286.42',
+      note: 'Installed replacement OEM drain pump assembly, cleared lint from drain hose, and verified two consecutive rinse/spin drain cycles. Backed by standard service and parts coverage.',
+      lines: [
+        ['Diagnostic In-Home Inspection', '1', '$89.00'],
+        ['Drain Pump Replacement Labor', '1', '$115.00'],
+        ['OEM Whirlpool Drain Pump Assembly', '1', '$63.00'],
+        ['Applicable State & Local Tax', '—', '$19.42']
+      ]
+    },
+    'INV-09818': {
+      date: 'February 03, 2026',
+      equipment: 'Bosch Dishwasher (Model SHPM65Z55N) · Issue: Slow Fill',
+      total: '$241.85',
+      note: 'Replaced the water inlet valve, verified the fill rate, and completed a full leak check and wash cycle. Backed by standard service and parts coverage.',
+      lines: [
+        ['Diagnostic In-Home Inspection', '1', '$89.00'],
+        ['Inlet Valve Replacement Labor', '1', '$95.00'],
+        ['OEM Bosch Water Inlet Valve', '1', '$42.00'],
+        ['Applicable State & Local Tax', '—', '$15.85']
+      ]
+    },
+    'INV-08207': {
+      date: 'September 21, 2025',
+      equipment: 'GE Dryer (Model GFD55ESSNWW) · Issue: No Heat',
+      total: '$318.74',
+      note: 'Installed a replacement heating element, tested the thermal controls, and confirmed proper vent airflow and drying temperature. Backed by standard service and parts coverage.',
+      lines: [
+        ['Diagnostic In-Home Inspection', '1', '$89.00'],
+        ['Heating Element Replacement Labor', '1', '$110.00'],
+        ['OEM GE Heating Element', '1', '$98.00'],
+        ['Applicable State & Local Tax', '—', '$21.74']
+      ]
+    }
+  };
+
+  const invoiceButtons = [...document.querySelectorAll('[data-invoice-select]')];
+  const invoiceMeta = document.querySelector('[data-invoice-meta]');
+  const invoiceEquipment = document.querySelector('[data-invoice-equipment]');
+  const invoiceLines = document.querySelector('[data-invoice-lines]');
+  const invoiceTotal = document.querySelector('[data-invoice-total]');
+  const invoiceNote = document.querySelector('[data-invoice-note]');
+
+  const selectInvoice = (button) => {
+    const id = button.dataset.invoiceSelect;
+    const invoice = invoiceData[id];
+    if (!invoice || !invoiceMeta || !invoiceEquipment || !invoiceLines || !invoiceTotal || !invoiceNote) return;
+
+    invoiceButtons.forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('is-active', selected);
+      item.setAttribute('aria-pressed', String(selected));
+    });
+
+    invoiceMeta.textContent = `${id} · ${invoice.date}`;
+    invoiceEquipment.textContent = invoice.equipment;
+    invoiceTotal.textContent = invoice.total;
+    invoiceNote.textContent = invoice.note;
+    invoiceLines.replaceChildren(...invoice.lines.map(([description, quantity, amount]) => {
+      const row = document.createElement('tr');
+      const descriptionCell = document.createElement('td');
+      const quantityCell = document.createElement('td');
+      const amountCell = document.createElement('td');
+      descriptionCell.textContent = description;
+      quantityCell.textContent = quantity;
+      amountCell.textContent = amount;
+      amountCell.className = 'invoice-amount';
+      row.append(descriptionCell, quantityCell, amountCell);
+      return row;
+    }));
+  };
+
+  invoiceButtons.forEach(button => button.addEventListener('click', () => selectInvoice(button)));
 
   // Table filter functionality
   const filterSelect = document.querySelector('[data-filter-status]');
