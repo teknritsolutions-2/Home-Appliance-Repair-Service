@@ -677,6 +677,11 @@
   margin-top: 16px;
 }
 
+.invoice-list-card,
+.invoice-detail-panel {
+  min-height: 0;
+}
+
 .invoice-list-item {
   width: 100%;
   padding: 12px;
@@ -941,7 +946,7 @@
 
   .dash-grid > .dash-card.stat-card {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: clamp(16px, 2.5vw, 28px);
   }
 
@@ -979,7 +984,28 @@
   .dash-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .invoice-list-card {
+    contain: size;
+    overflow: hidden;
+  }
+
+  .invoice-list-card .invoice-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .invoice-detail-panel {
+    display: flex;
+  }
+
+  .invoice-detail-panel .invoice-paper {
+    flex: 1 1 auto;
   }
 
   .span-12 { grid-column: span 12; }
