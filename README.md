@@ -71,6 +71,7 @@ Home Appliance Repair Service/
 │   └── dashboard-profile.html
 ├── documentation/
 │   └── customization.md
+├── .gitignore
 ├── .nojekyll
 ├── index.html
 └── README.md
@@ -78,10 +79,18 @@ Home Appliance Repair Service/
 
 ## Getting Started
 
-Serve the project root with any standard static HTTP server and navigate to `pages/index.html`:
+Serve the project root with any standard static HTTP server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Visit `http://localhost:8080/pages/index.html`.
+Visit `http://localhost:8080/` or open the canonical source homepage directly at
+`http://localhost:8080/pages/index.html`.
+
+## GitHub Pages
+
+GitHub Pages publishes the `main` branch from the repository root. The root
+`index.html` provides the repository URL entry point and redirects to the
+canonical `pages/index.html` homepage. `.nojekyll` keeps the static assets and
+directory structure served verbatim.
