@@ -48,8 +48,8 @@
     ['services', 'Services', 'services.html'],
     ['how-it-works', 'How It Works', 'how-it-works.html'],
     ['pricing', 'Pricing', 'pricing.html'],
-    ['testimonials', 'Testimonials', 'testimonials.html'],
-    ['contact', 'Contact', 'contact.html']
+    ['contact', 'Contact', 'contact.html'],
+    ['dashboard', 'Dashboard', 'dashboard.html']
   ];
 
   const isCurrent = (key) => page === key ? ' aria-current="page" class="nav-link active"' : ' class="nav-link"';
@@ -92,8 +92,8 @@
             <button class="nav-toggle-btn hide-on-tablet" type="button" data-dir-toggle aria-label="Toggle text direction">
               ${(root.dir || 'ltr').toUpperCase()}
             </button>
-            <a class="btn btn-secondary btn-sm hide-on-tablet" href="login.html">Login</a>
-            <a class="btn btn-primary btn-sm hide-on-tablet" href="repair-request.html">Request Repair</a>
+            <a class="btn btn-primary btn-sm hide-on-tablet" href="login.html">Login</a>
+            <a class="btn btn-secondary btn-sm hide-on-tablet" href="repair-request.html">Request Repair</a>
             <button class="hamburger-btn" type="button" data-drawer-toggle aria-label="Open mobile navigation menu" aria-expanded="false">
               <span></span>
             </button>
@@ -118,12 +118,12 @@
           <a href="index.html" class="mobile-drawer-link${page === 'home' ? ' active' : ''}">Home Page 1</a>
           <a href="home-2.html" class="mobile-drawer-link${page === 'home-2' ? ' active' : ''}">Home Page 2</a>
           ${navItems.map(([key, label, href]) => `<a href="${href}" class="mobile-drawer-link${page === key ? ' active' : ''}">${label}</a>`).join('')}
-          
+
           <span class="drawer-section-label" style="margin-top:18px;">Customer Portal</span>
           <div class="drawer-actions-stack">
-            <a href="repair-request.html" class="btn btn-primary" style="width:100%;justify-content:center;min-height:46px;">Request Repair</a>
-            <a href="dashboard.html" class="btn btn-secondary" style="width:100%;justify-content:center;min-height:46px;">Customer Dashboard</a>
-            <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;min-height:44px;">Login to Account</a>
+            <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;min-height:46px;">Customer Login</a>
+            <a href="repair-request.html" class="btn btn-secondary" style="width:100%;justify-content:center;min-height:46px;">Request Repair</a>
+            <a href="dashboard.html" class="btn btn-outline" style="width:100%;justify-content:center;min-height:44px;">Customer Dashboard</a>
           </div>
         </div>
 
@@ -180,7 +180,7 @@
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropdown) {
       const trigger = dropdown.querySelector('.nav-dropdown-trigger');
-      
+
       const toggleDropdown = (open) => {
         const isOpen = open !== undefined ? open : !dropdown.classList.contains('open');
         dropdown.classList.toggle('open', isOpen);
@@ -373,13 +373,13 @@
   function updateThemeUI(theme) {
     root.dataset.theme = theme;
     localStorage.setItem('fixora-theme', theme);
-    
+
     // In Light mode: shows Moon icon (action: switch to dark); in Dark mode: shows Sun icon (action: switch to light)
     document.querySelectorAll('[data-theme-toggle]').forEach(b => {
       b.innerHTML = theme === 'dark' ? sunIconSvg : moonIconSvg;
       b.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     });
-    
+
     document.querySelectorAll('[data-theme-set]').forEach(b => {
       b.classList.toggle('active', b.dataset.themeSet === theme);
     });
@@ -508,7 +508,7 @@
         const visibleCount = window.innerWidth >= 640 ? 2 : 1;
         const maxIndex = Math.max(0, total - visibleCount);
         index = Math.min(Math.max(0, index), maxIndex);
-        
+
         const isRtl = root.dir === 'rtl';
         const shift = index * getCardWidth();
         track.style.transform = `translateX(${isRtl ? shift : -shift}px)`;
@@ -747,13 +747,27 @@
      11. PASSWORD VISIBILITY TOGGLE
      ========================================================================== */
   function initPasswordToggles() {
-    document.querySelectorAll('.password-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const input = btn.closest('.form-group')?.querySelector('input');
+    document.querySelectorAll('.password-toggle-btn, .password-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const wrap = btn.closest('.password-field-wrap') || btn.closest('.form-group');
+        const input = wrap?.querySelector('input');
         if (!input) return;
         const isPassword = input.type === 'password';
         input.type = isPassword ? 'text' : 'password';
-        btn.textContent = isPassword ? 'Hide' : 'Show';
+
+        const newLabel = isPassword ? 'Hide password' : 'Show password';
+        btn.setAttribute('aria-label', newLabel);
+        btn.setAttribute('title', newLabel);
+
+        const eyeShow = btn.querySelector('.eye-show');
+        const eyeHide = btn.querySelector('.eye-hide');
+        if (eyeShow && eyeHide) {
+          eyeShow.style.display = isPassword ? 'none' : 'block';
+          eyeHide.style.display = isPassword ? 'block' : 'none';
+        } else {
+          btn.textContent = isPassword ? 'Hide' : 'Show';
+        }
       });
     });
   }

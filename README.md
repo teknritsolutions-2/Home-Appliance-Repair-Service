@@ -40,10 +40,8 @@ Home Appliance Repair Service/
 │   │   └── rtl.css
 │   ├── js/
 │   │   ├── main.js
-│   │   ├── dashboard.js
-│   │   └── plugins/
-│   ├── images/
-│   └── fonts/
+│   │   └── dashboard.js
+│   └── images/
 ├── pages/
 │   ├── index.html
 │   ├── home-2.html
@@ -59,6 +57,7 @@ Home Appliance Repair Service/
 │   ├── faq.html
 │   ├── login.html
 │   ├── register.html
+│   ├── forgot-password.html
 │   ├── repair-request.html
 │   ├── privacy.html
 │   ├── terms.html
@@ -72,6 +71,8 @@ Home Appliance Repair Service/
 │   └── dashboard-profile.html
 ├── documentation/
 │   └── customization.md
+├── .nojekyll
+├── index.html
 └── README.md
 ```
 

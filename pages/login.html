@@ -92,9 +92,11 @@
       <!-- Right Form Panel -->
       <div class="auth-form-side">
         <div class="auth-form-box">
-          <span class="eyebrow">Customer Portal</span>
-          <h1 style="font-size:2rem;margin-bottom:8px;">Welcome back</h1>
-          <p class="muted" style="margin-bottom:28px;">Log into your account to manage service appointments and view invoices.</p>
+          <div class="auth-header" style="text-align:center;margin-bottom:28px;">
+            <span class="eyebrow" style="margin-bottom:8px;">Customer Portal</span>
+            <h1 style="font-size:2rem;margin-bottom:8px;line-height:1.2;">Welcome back</h1>
+            <p class="muted" style="margin:0 auto;max-width:36ch;">Log into your account to manage service appointments and view invoices.</p>
+          </div>
 
           <form data-validate action="dashboard.html" method="get">
             <div class="form-group">
@@ -103,14 +105,26 @@
             </div>
 
             <div class="form-group">
-              <div style="display:flex;justify-content:space-between;align-items:center;">
-                <label class="form-label" for="loginPassword">Password *</label>
-                <button type="button" class="password-toggle text-link" style="font-size:0.82rem;font-weight:600;">Show</button>
+              <label class="form-label" for="loginPassword">Password *</label>
+              <div class="password-field-wrap">
+                <input class="form-input" id="loginPassword" type="password" required placeholder="Enter password" autocomplete="current-password">
+                <button type="button" class="password-toggle-btn" aria-label="Show password" title="Show password">
+                  <svg class="eye-icon eye-show" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg class="eye-icon eye-hide" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                  </svg>
+                </button>
               </div>
-              <input class="form-input" id="loginPassword" type="password" required placeholder="Enter password">
+              <div class="form-subrow-end">
+                <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+              </div>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="width:100%;margin-top:10px;">Log In to Portal</button>
+            <button class="btn btn-primary" type="submit" style="width:100%;margin-top:12px;">Log In to Portal</button>
           </form>
 
           <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:var(--text-muted);">
