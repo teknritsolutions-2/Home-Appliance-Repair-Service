@@ -71,9 +71,9 @@ Home Appliance Repair Service/
 │   └── dashboard-profile.html
 ├── documentation/
 │   └── customization.md
-├── .gitignore
-├── .nojekyll
-├── index.html
+├── .github/
+│   └── workflows/
+│       └── pages.yml
 └── README.md
 ```
 
@@ -85,12 +85,11 @@ Serve the project root with any standard static HTTP server:
 python3 -m http.server 8080
 ```
 
-Visit `http://localhost:8080/` or open the canonical source homepage directly at
-`http://localhost:8080/pages/index.html`.
+Open the canonical source homepage at `http://localhost:8080/pages/index.html`.
 
 ## GitHub Pages
 
-GitHub Pages publishes the `main` branch from the repository root. The root
-`index.html` provides the repository URL entry point and redirects to the
-canonical `pages/index.html` homepage. `.nojekyll` keeps the static assets and
-directory structure served verbatim.
+GitHub Actions publishes the site without adding deployment-only files to the
+source root. During deployment, `.github/workflows/pages.yml` copies `assets/`
+and `pages/` into `${{ runner.temp }}/published-site` and generates a temporary
+root redirect to the canonical `pages/index.html` homepage.
