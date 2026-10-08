@@ -4155,6 +4155,19 @@ html[dir="rtl"] .home-hero-overlay {
 .service-catalogue-action .btn {
   width: 100%;
   justify-content: center;
+  border: 1.5px solid #242724;
+}
+
+[data-theme="dark"] .service-catalogue-action .btn {
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+
+.service-card-body .btn-secondary {
+  border: 1.5px solid #242724;
+}
+
+[data-theme="dark"] .service-card-body .btn-secondary {
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
 }
 
 /* 2. Problem-Led Fault Finder Directory */

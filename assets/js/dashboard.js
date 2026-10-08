@@ -59,6 +59,7 @@
       ${nav()}
       <div class="dash-sidebar-bottom">
         ${controls}
+        <a class="btn btn-secondary btn-logout" href="login.html">Logout</a>
       </div>`;
   }
 
@@ -76,7 +77,6 @@
       <div class="user-controls">
         <span class="user-name">Alex Morgan</span>
         <div class="avatar" aria-label="User avatar">AM</div>
-        <a class="btn btn-secondary btn-logout" href="login.html">Logout</a>
       </div>`;
   }
 
@@ -104,6 +104,7 @@
       ${nav()}
       <div class="dash-sidebar-bottom" style="margin-top:auto;padding-top:20px;border-top:1px solid var(--dark-border);">
         ${controls}
+        <a class="btn btn-secondary btn-logout" href="login.html">Logout</a>
       </div>`;
     document.body.appendChild(drawer);
   }

@@ -345,10 +345,29 @@
   text-align: center;
 }
 
-.user-controls .btn-logout {
-  padding: 6px 14px;
-  font-size: 0.82rem;
-  min-height: 36px;
+.dash-sidebar-bottom .btn-logout,
+.dash-drawer .btn-logout {
+  width: 100%;
+  justify-content: center;
+  margin-top: 14px;
+  min-height: 40px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  background-color: transparent;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dash-sidebar-bottom .btn-logout:hover,
+.dash-drawer .btn-logout:hover {
+  background-color: #FFFFFF;
+  color: #111111 !important;
+  border-color: #FFFFFF;
 }
 
 .avatar {
