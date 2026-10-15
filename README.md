@@ -43,7 +43,6 @@ Home Appliance Repair Service/
 │   │   └── dashboard.js
 │   └── images/
 ├── pages/
-│   ├── index.html
 │   ├── home-2.html
 │   ├── about.html
 │   ├── services.html
@@ -71,9 +70,7 @@ Home Appliance Repair Service/
 │   └── dashboard-profile.html
 ├── documentation/
 │   └── customization.md
-├── .github/
-│   └── workflows/
-│       └── pages.yml
+├── index.html
 └── README.md
 ```
 
@@ -85,11 +82,8 @@ Serve the project root with any standard static HTTP server:
 python3 -m http.server 8080
 ```
 
-Open the canonical source homepage at `http://localhost:8080/pages/index.html`.
+Open the homepage at `http://localhost:8080/index.html` or `http://localhost:8080/`.
 
 ## GitHub Pages
 
-GitHub Actions publishes the site without adding deployment-only files to the
-source root. During deployment, `.github/workflows/pages.yml` copies `assets/`
-and `pages/` into `${{ runner.temp }}/published-site` and generates a temporary
-root redirect to the canonical `pages/index.html` homepage.
+The repository is configured for native GitHub Pages branch deployment directly from the root of the `main` branch.

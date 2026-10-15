@@ -22,7 +22,7 @@
     ['dashboard-profile', '⚙', 'Profile & Settings', 'dashboard-profile.html']
   ];
 
-  const brand = `<a class="site-brand" href="index.html" aria-label="Fixora Home">${brandMarkSvg}<span>Fixora</span></a>`;
+  const brand = `<a class="site-brand" href="../index.html" aria-label="Fixora Home">${brandMarkSvg}<span>Fixora</span></a>`;
 
   const nav = () => `
     <ul class="dash-nav">

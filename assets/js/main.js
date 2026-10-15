@@ -12,6 +12,9 @@
   const page = document.body.dataset.page || '';
   const isAuth = document.body.classList.contains('auth-page');
   const isDashboard = document.body.classList.contains('dashboard-page');
+  const isRoot = document.body.dataset.root === 'true' || (!window.location.pathname.includes('/pages/') && (window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('.html')));
+  const pagePrefix = isRoot ? 'pages/' : '';
+  const homeLink = isRoot ? 'index.html' : '../index.html';
   const savedTheme = localStorage.getItem('fixora-theme') || 'light';
   const savedDir = localStorage.getItem('fixora-dir') || 'ltr';
   const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -31,7 +34,7 @@
     <circle cx="28.5" cy="28.5" r="2.5" fill="var(--accent)"/>
   </svg>`;
 
-  const brandLogoHtml = `<a class="site-brand" href="index.html" aria-label="Fixora Home">${brandMarkSvg}<span>Fixora</span></a>`;
+  const brandLogoHtml = `<a class="site-brand" href="${homeLink}" aria-label="Fixora Home">${brandMarkSvg}<span>Fixora</span></a>`;
 
   /* Crisp Standard SVG Icons for Theme Toggle (fa-moon / fa-sun style) */
   const moonIconSvg = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -44,12 +47,12 @@
   </svg>`;
 
   const navItems = [
-    ['about', 'About', 'about.html'],
-    ['services', 'Services', 'services.html'],
-    ['how-it-works', 'How It Works', 'how-it-works.html'],
-    ['pricing', 'Pricing', 'pricing.html'],
-    ['contact', 'Contact', 'contact.html'],
-    ['dashboard', 'Dashboard', 'dashboard.html']
+    ['about', 'About', `${pagePrefix}about.html`],
+    ['services', 'Services', `${pagePrefix}services.html`],
+    ['how-it-works', 'How It Works', `${pagePrefix}how-it-works.html`],
+    ['pricing', 'Pricing', `${pagePrefix}pricing.html`],
+    ['contact', 'Contact', `${pagePrefix}contact.html`],
+    ['dashboard', 'Dashboard', `${pagePrefix}dashboard.html`]
   ];
 
   const isCurrent = (key) => page === key ? ' aria-current="page" class="nav-link active"' : ' class="nav-link"';
@@ -77,8 +80,8 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="nav-dropdown-menu" aria-labelledby="homeDropdownTrigger">
-                  <a href="index.html" class="nav-dropdown-item${page === 'home' ? ' active' : ''}">Home Page 1</a>
-                  <a href="home-2.html" class="nav-dropdown-item${page === 'home-2' ? ' active' : ''}">Home Page 2</a>
+                  <a href="${homeLink}" class="nav-dropdown-item${page === 'home' ? ' active' : ''}">Home Page 1</a>
+                  <a href="${pagePrefix}home-2.html" class="nav-dropdown-item${page === 'home-2' ? ' active' : ''}">Home Page 2</a>
                 </div>
               </li>
               ${navItems.map(([key, label, href]) => `<li><a href="${href}"${isCurrent(key)}>${label}</a></li>`).join('')}
@@ -92,8 +95,8 @@
             <button class="nav-toggle-btn hide-on-tablet" type="button" data-dir-toggle aria-label="Toggle text direction">
               ${(root.dir || 'ltr').toUpperCase()}
             </button>
-            <a class="btn btn-primary btn-sm hide-on-tablet" href="login.html">Login</a>
-            <a class="btn btn-secondary btn-sm hide-on-tablet" href="repair-request.html">Request Repair</a>
+            <a class="btn btn-primary btn-sm hide-on-tablet" href="${pagePrefix}login.html">Login</a>
+            <a class="btn btn-secondary btn-sm hide-on-tablet" href="${pagePrefix}repair-request.html">Request Repair</a>
             <button class="hamburger-btn" type="button" data-drawer-toggle aria-label="Open mobile navigation menu" aria-expanded="false">
               <span></span>
             </button>
@@ -115,15 +118,15 @@
 
         <div class="mobile-drawer-links">
           <span class="drawer-section-label">Navigation</span>
-          <a href="index.html" class="mobile-drawer-link${page === 'home' ? ' active' : ''}">Home Page 1</a>
-          <a href="home-2.html" class="mobile-drawer-link${page === 'home-2' ? ' active' : ''}">Home Page 2</a>
+          <a href="${homeLink}" class="mobile-drawer-link${page === 'home' ? ' active' : ''}">Home Page 1</a>
+          <a href="${pagePrefix}home-2.html" class="mobile-drawer-link${page === 'home-2' ? ' active' : ''}">Home Page 2</a>
           ${navItems.map(([key, label, href]) => `<a href="${href}" class="mobile-drawer-link${page === key ? ' active' : ''}">${label}</a>`).join('')}
 
           <span class="drawer-section-label" style="margin-top:18px;">Customer Portal</span>
           <div class="drawer-actions-stack">
-            <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;min-height:46px;">Customer Login</a>
-            <a href="repair-request.html" class="btn btn-secondary" style="width:100%;justify-content:center;min-height:46px;">Request Repair</a>
-            <a href="dashboard.html" class="btn btn-outline" style="width:100%;justify-content:center;min-height:44px;">Customer Dashboard</a>
+            <a href="${pagePrefix}login.html" class="btn btn-primary" style="width:100%;justify-content:center;min-height:46px;">Customer Login</a>
+            <a href="${pagePrefix}repair-request.html" class="btn btn-secondary" style="width:100%;justify-content:center;min-height:46px;">Request Repair</a>
+            <a href="${pagePrefix}dashboard.html" class="btn btn-outline" style="width:100%;justify-content:center;min-height:44px;">Customer Dashboard</a>
           </div>
         </div>
 
@@ -288,25 +291,25 @@
             <div class="footer-col">
               <h4>Navigation</h4>
               <ul>
-                <li><a href="index.html">Home Page 1</a></li>
-                <li><a href="home-2.html">Home Page 2</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="${homeLink}">Home Page 1</a></li>
+                <li><a href="${pagePrefix}home-2.html">Home Page 2</a></li>
+                <li><a href="${pagePrefix}about.html">About</a></li>
+                <li><a href="${pagePrefix}services.html">Services</a></li>
+                <li><a href="${pagePrefix}how-it-works.html">How It Works</a></li>
+                <li><a href="${pagePrefix}pricing.html">Pricing</a></li>
+                <li><a href="${pagePrefix}testimonials.html">Testimonials</a></li>
+                <li><a href="${pagePrefix}contact.html">Contact</a></li>
               </ul>
             </div>
 
             <div class="footer-col">
               <h4>Customer Portal</h4>
               <ul>
-                <li><a href="repair-request.html">Request Repair</a></li>
-                <li><a href="dashboard.html">Customer Dashboard</a></li>
-                <li><a href="dashboard-history.html">Repair History</a></li>
-                <li><a href="dashboard-invoices.html">Invoices</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="${pagePrefix}repair-request.html">Request Repair</a></li>
+                <li><a href="${pagePrefix}dashboard.html">Customer Dashboard</a></li>
+                <li><a href="${pagePrefix}dashboard-history.html">Repair History</a></li>
+                <li><a href="${pagePrefix}dashboard-invoices.html">Invoices</a></li>
+                <li><a href="${pagePrefix}login.html">Login</a></li>
               </ul>
             </div>
 
@@ -316,17 +319,17 @@
                 <li><a href="tel:18005550147">(800) 555-0147</a></li>
                 <li><a href="mailto:care@fixora.example">care@fixora.example</a></li>
                 <li><span>Mon–Sat: 7am–8pm</span></li>
-                <li><a href="contact.html">Service Area</a></li>
+                <li><a href="${pagePrefix}contact.html">Service Area</a></li>
               </ul>
             </div>
 
             <div class="footer-col">
               <h4>Legal</h4>
               <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="pricing.html">Estimate Policy</a></li>
-                <li><a href="how-it-works.html">90-Day Warranty</a></li>
+                <li><a href="${pagePrefix}privacy.html">Privacy Policy</a></li>
+                <li><a href="${pagePrefix}terms.html">Terms of Service</a></li>
+                <li><a href="${pagePrefix}pricing.html">Estimate Policy</a></li>
+                <li><a href="${pagePrefix}how-it-works.html">90-Day Warranty</a></li>
               </ul>
             </div>
           </div>
@@ -334,8 +337,8 @@
           <div class="footer-bottom">
             <p>© ${new Date().getFullYear()} Fixora Appliance Repair. All rights reserved.</p>
             <div class="footer-legal-links">
-              <a href="privacy.html">Privacy Policy</a>
-              <a href="terms.html">Terms of Service</a>
+              <a href="${pagePrefix}privacy.html">Privacy Policy</a>
+              <a href="${pagePrefix}terms.html">Terms of Service</a>
             </div>
           </div>
         </div>
